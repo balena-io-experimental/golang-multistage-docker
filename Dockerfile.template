@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-golang:1.8 as builder
+FROM resin/%%RESIN_MACHINE_NAME%%-golang as builder
 WORKDIR /go/src/hello-world
 COPY main.go ./
 RUN CGO_ENABLED=0 go install -a -tags netgo -ldflags '-extldflags "-static"'
